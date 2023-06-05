@@ -544,3 +544,6 @@ body {
     transform: translateY(110%); }
   .btn:focus {
     outline: none; }
+
+.map {
+  width: 90%; }
