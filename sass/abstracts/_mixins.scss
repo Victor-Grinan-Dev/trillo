@@ -1,0 +1,83 @@
+@mixin clearfix{
+    &::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+@mixin absolute-center{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin linear-gradient($color1, $color2) {
+    background-image: linear-gradient(to right bottom, $color1, $color2);
+}
+
+@mixin gradient-text($color1, $color2) {  
+    //create gradient text:
+    background-image: linear-gradient(to right, $color1, $color2);
+    display: inline-block;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@mixin gradient-background($color1, $color2, $image) {
+    background-image: linear-gradient(to right bottom, $color1, $color2), url($image);
+}
+
+@mixin solid-gradient($color1, $color2, $degs){
+    background-image: linear-gradient($degs, $color1 0%, $color1 50%, $color2 50%);
+}
+@mixin shadow-light{
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.15);
+} 
+@mixin shadow-dark{
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+} 
+// MEDIA QUERRY MANAGER
+/*
+$breakpoint argument choices:
+name:           sizes:          div/16px:   device:
+-phone          0-600px         37.5em      phone
+-tab-port       600-900px       56.25em     tablet portrait
+-tab-land       900-1200px      75em        tablets landscape
+[default]       [1200-1800px]   [default]   desktops actual config
+-big-desktop    1800px +        112.5em     big desktops
+*/
+@mixin respond ($breakpoint){
+
+    @if $breakpoint == "phone"{
+        @media only screen and (max-width:37.5em){ 
+            @content
+        }
+    }
+
+    @if $breakpoint == "tab-port"{
+        @media only screen and (max-width:56.25em){
+            @content
+        }
+    }
+
+    @if $breakpoint == "tab-land"{
+        @media only screen and (max-width:75em){@content}
+    }
+
+    @if $breakpoint == "big-desktop"{
+        @media only screen and (min-width:112.5em){@content}
+    }
+
+}
+@mixin respond-phone {
+    @media only screen and (max-width:600px){@content};
+}
+@mixin top-line{
+    border-top: 1px solid $gray-light-4;
+}
+
+@mixin bottom-line{
+    border-bottom: 1px solid $gray-light-4;
+}

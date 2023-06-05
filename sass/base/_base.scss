@@ -1,0 +1,56 @@
+:root{
+  --shodow-dark: box-shadow: 0 2rem 6rem rgba(0, 0, 0, .3);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //defines what a rem is:
+  /*by default font size is 16px 1 rem is normally the font size default value,
+  if we want to customize and set the font size to 10px
+  we could set the font to be x percent of the actual value that represents those 10px we want.
+  formula:
+    10px we want / 16px total height * 100% converted to percent = 62.5%)
+  */
+
+  font-size: 62.5%; // NOW 1 rem = 10px ACCROSS THE HTML
+  box-sizing: border-box;
+
+  @include respond (big-desktop){
+    font-size: 75% //1rem = 12px 12/16 = 75%
+  };
+
+  // @include respond (tab-land){
+  //   font-size: 56.25% //1rem = 9px 9/16 = 56.25%
+  // };
+
+  // @include respond (tab-port){
+  //   font-size: 50% //1rem = 8px 8/16 = 50%
+  // };
+
+  // @include respond (phone){
+  //   font-size: 30% 
+  // };
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  background-image: linear-gradient(to right bottom, $primary-light, $primary-dark);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: $gray-dark-2;
+}
+
+::selection{
+  background-color: $primary-dark;
+  color: white;
+  
+}
