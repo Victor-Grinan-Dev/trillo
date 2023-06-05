@@ -352,8 +352,10 @@ body {
         height: 1rem; } }
   .overview__location {
     display: flex;
-    display: flex;
-    vertical-align: center; }
+    vertical-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; }
   .overview__icon-location {
     margin-right: 0.5rem; }
   .overview__rating {
@@ -378,7 +380,8 @@ body {
         font-size: 1rem; } }
   .overview__rating-count {
     font-size: 0.8rem;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    text-align: center; }
 
 .btn-inline {
   border: none;
