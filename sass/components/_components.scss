@@ -214,17 +214,12 @@
     z-index: 10; //only works if position defined
 
     @media only screen and (max-width:$bp-xsmall){
-        padding: 1.5rem 0;
-        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 1.5rem 0;
     }
-
   }
-  // &__link:hover{
-  //     color: $primary;
-  // }
 
   &__icon {
     width: 1.75rem;
@@ -232,11 +227,8 @@
     margin-right: 2rem;
     fill: currentColor; //adopts color of the parent
 
-    @media only screen and (width:$bp-xsmall){
-        padding: 1.5rem 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    @media only screen and (max-width:$bp-xsmall){
+        margin-right: 0;
     }
   }
 
